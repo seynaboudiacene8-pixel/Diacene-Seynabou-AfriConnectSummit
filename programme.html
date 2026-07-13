@@ -4,11 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriConnectSummit — Programme</title>
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Fichier CSS Unique -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
 
-    <script src="js/main.js"></script>
+    <!-- NAVBAR (Même structure identique partout) -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">AfriConnect Summit 2026</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="programme.html" class="nav-link active">Programme</a>
+                <a href="intervenants.html" class="nav-link">Intervenants</a>
+                <a href="contact.html" class="nav-link">Inscription & Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Changer de thème">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO INTERNE (Bannière pleine largeur avec Fil d'Ariane) -->
+        <section class="internal-hero">
+            <div class="hero-overlay-content">
+                <h1>Le Programme Complet</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a> <i class="bi bi-chevron-right"></i> <span>Programme</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- SECTION ONGLETS 3 JOURS (Interactivité JS, Tableaux stylisés) -->
+        <section class="program-tabs-section">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="day1">Jour 1 — 15 Nov</button>
+                <button class="tab-btn" data-tab="day2">Jour 2 — 16 Nov</button>
+                <button class="tab-btn" data-tab="day3">Jour 3 — 17 Nov</button>
+            </div>
+
+            <div class="tabs-content-wrapper">
+                <!-- Jour 1 -->
+                <div class="tab-pane active" id="day1">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08h30 - 09h30</td>
+                                <td><strong>Accueil des participants & Émargement</strong></td>
+                                <td>Équipe d'organisation</td>
+                                <td>Hall Principal</td>
+                            </tr>
+                            <tr>
+                                <td>09h30 - 11h00</td>
+                                <td><strong>Cérémonie d'Ouverture & Discours d'introduction</strong></td>
+                                <td>Fatou Diop</td>
+                                <td>Auditorium A</td>
+                            </tr>
+                            <tr>
+                                <td>11h30 - 13h00</td>
+                                <td><strong>L'impact de l'IA Générative sur le développement de l'Afrique</strong></td>
+                                <td>Sarah Mensah</td>
+                                <td>Salle des Conférences</td>
+                            </tr>
+                            <tr>
+                                <td>14h30 - 16h00</td>
+                                <td><strong>Atelier Pratique : Premiers pas avec le Cloud local</strong></td>
+                                <td>Jean-Luc Kouamé</td>
+                                <td>Lab Tech 1</td>
+                            </tr>
+                            <tr>
+                                <td>16h30 - 18h00</td>
+                                <td><strong>Fintech & Inclusion Financière en Afrique de l'Ouest</strong></td>
+                                <td>Amadou Diallo</td>
+                                <td>Auditorium A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Jour 2 -->
+                <div class="tab-pane" id="day2">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09h00 - 10h30</td>
+                                <td><strong>Web3 et Blockchain : Mythes et Réalités économiques</strong></td>
+                                <td>Kofi Mensah</td>
+                                <td>Auditorium A</td>
+                            </tr>
+                            <tr>
+                                <td>11h00 - 12h30</td>
+                                <td><strong>La cybersécurité des infrastructures critiques nationales</strong></td>
+                                <td>Jean-Luc Kouamé</td>
+                                <td>Salle des Conférences</td>
+                            </tr>
+                            <tr>
+                                <td>14h00 - 15h30</td>
+                                <td><strong>Soutenir l'écosystème startup en Afrique francophone</strong></td>
+                                <td>Mariama Ba</td>
+                                <td>Auditorium B</td>
+                            </tr>
+                            <tr>
+                                <td>16h00 - 17h30</td>
+                                <td><strong>Masterclass : Clean Architecture pour développeurs JS</strong></td>
+                                <td>Samba Sow</td>
+                                <td>Lab Tech 2</td>
+                            </tr>
+                            <tr>
+                                <td>17h30 - 18h30</td>
+                                <td><strong>Session de Networking & Pitch de Startups</strong></td>
+                                <td>Sélection Jury</td>
+                                <td>Espace VIP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Jour 3 -->
+                <div class="tab-pane" id="day3">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09h00 - 10h30</td>
+                                <td><strong>Green Tech : La tech au service de la transition écologique</strong></td>
+                                <td>Awa Ndiaye</td>
+                                <td>Auditorium B</td>
+                            </tr>
+                            <tr>
+                                <td>11h00 - 12h30</td>
+                                <td><strong>Le futur du travail et de la formation des développeurs en Afrique</strong></td>
+                                <td>Ousmane Sy</td>
+                                <td>Salle des Conférences</td>
+                            </tr>
+                            <tr>
+                                <td>14h00 - 15h30</td>
+                                <td><strong>Atelier final : Déployer ses applications à grande échelle</strong></td>
+                                <td>Jean-Luc Kouamé</td>
+                                <td>Lab Tech 1</td>
+                            </tr>
+                            <tr>
+                                <td>15h45 - 17h00</td>
+                                <td><strong>Table ronde de clôture : Plan d'action pour la Tech Africaine en 2027</strong></td>
+                                <td>Tous les experts</td>
+                                <td>Auditorium A</td>
+                            </tr>
+                            <tr>
+                                <td>17h00 - 18h00</td>
+                                <td><strong>Cocktail de clôture et remise de prix</strong></td>
+                                <td>Équipe d'organisation</td>
+                                <td>Jardin d'honneur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION THÉMATIQUES (CSS Grid 2x2, Animation au scroll) -->
+        <section class="themes-section scroll-anim">
+            <h2 class="section-title">Les 4 Grandes Thématiques</h2>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <div class="theme-icon-container"><i class="bi bi-cpu-fill"></i></div>
+                    <h3>Intelligence Artificielle & Tech</h3>
+                    <p>Analyse des opportunités et des défis de l'IA appliquée aux enjeux de développement en Afrique.</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon-container"><i class="bi bi-wallet2"></i></div>
+                    <h3>Business & Fintech</h3>
+                    <p>Comment l'innovation financière contribue à l'inclusion bancaire et dynamise l'économie africaine.</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon-container"><i class="bi bi-palette-fill"></i></div>
+                    <h3>Design & UI/UX</h3>
+                    <p>Penser et concevoir des applications adaptées aux contraintes des utilisateurs du continent.</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon-container"><i class="bi bi-database-fill-gear"></i></div>
+                    <h3>Cloud & Data Science</h3>
+                    <p>Souveraineté des données, hébergement cloud local et exploitation analytique de la Big Data.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>AfriConnect Summit 2026</h3>
+                <p>Le carrefour de l'innovation et du développement technologique sur le continent africain.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Accès Rapide</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> AfriConnect Summit. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Retour en haut de page">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+<script src="js/main.js"></script>
 </body>
 </html>

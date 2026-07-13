@@ -3,12 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriConnectSummit — Contact</title>
+    <title>AfriConnectSummit — Inscription & Contact</title>
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Fichier CSS Unique -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
 
-    <script src="js/main.js"></script>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">AfriConnect Summit 2026</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="programme.html" class="nav-link">Programme</a>
+                <a href="intervenants.html" class="nav-link">Intervenants</a>
+                <a href="contact.html" class="nav-link active">Inscription & Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Changer de thème">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO INTERNE -->
+        <section class="internal-hero">
+            <div class="hero-overlay-content">
+                <h1>Contact & Inscription</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a> <i class="bi bi-chevron-right"></i> <span>Contact</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- FORMULAIRE D'INSCRIPTION (Deux colonnes Flexbox) -->
+        <section class="form-section">
+            <div class="contact-container">
+                <!-- Colonne Gauche : Formulaire -->
+                <div class="contact-col-form">
+                    <h2>Réserver votre place</h2>
+                    <form id="registrationForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Nom complet</label>
+                            <input type="text" id="fullName" placeholder="Ex: Jean Dupont">
+                            <span class="error-msg" id="errorName"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adresse Email</label>
+                            <input type="email" id="email" placeholder="Ex: jean.dupont@gmail.com">
+                            <span class="error-msg" id="errorEmail"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Numéro de Téléphone (Minimum 8 chiffres)</label>
+                            <input type="tel" id="phone" placeholder="Ex: 771234567">
+                            <span class="error-msg" id="errorPhone"></span>
+                        </div>
+
+                        <div class="form-grid-inputs">
+                            <div class="form-group">
+                                <label for="ticketType">Type de participation</label>
+                                <select id="ticketType">
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="student">Étudiant (Gratuit)</option>
+                                    <option value="regular">Professionnel</option>
+                                    <option value="vip">Accès VIP / Presse</option>
+                                </select>
+                                <span class="error-msg" id="errorTicket"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">Pays Africain</label>
+                                <select id="country">
+                                    <option value="">Sélectionnez un pays...</option>
+                                    <option value="Senegal">Sénégal</option>
+                                    <option value="Cote-d-Ivoire">Côte d'Ivoire</option>
+                                    <option value="Mali">Mali</option>
+                                    <option value="Cameroun">Cameroun</option>
+                                    <option value="Gabon">Gabon</option>
+                                    <option value="Benin">Bénin</option>
+                                    <option value="Togo">Togo</option>
+                                    <option value="Guinee">Guinée</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Burkina-Faso">Burkina Faso</option>
+                                </select>
+                                <span class="error-msg" id="errorCountry"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message ou Motivation (Minimum 20 caractères)</label>
+                            <textarea id="message" rows="4" placeholder="Qu'attendez-vous du sommet ?"></textarea>
+                            <span class="error-msg" id="errorMessage"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Soumettre la demande</button>
+                        <div class="success-alert" id="successAlert">Inscription soumise avec succès !</div>
+                    </form>
+                </div>
+
+                <!-- Colonne Droite : Informations & Carte -->
+                <div class="contact-col-info">
+                    <h2>Informations de contact</h2>
+                    <ul class="info-list">
+                        <li><i class="bi bi-geo-alt-fill"></i> Centre de Conférence Teranga, Dakar, Sénégal</li>
+                        <li><i class="bi bi-envelope-fill"></i> contact@africonnectsummit.com</li>
+                        <li><i class="bi bi-telephone-fill"></i> +221 33 800 00 00</li>
+                    </ul>
+
+                    <!-- Carte Google Maps intégrée -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.0435134764835!2d-17.47291762512684!3d14.704443985794697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1129b8fbfefc5%3A0x6e9f2868ef6be354!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1700000000000!5m2!1sfr!2ssn" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCORDÉON FAQ (CSS Pure avec :checked / sans JS) -->
+        <section class="faq-section">
+            <h2 class="section-title">Foire aux Questions</h2>
+            <div class="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1" class="faq-toggle">
+                    <label for="faq1" class="faq-header">
+                        Le sommet est-il gratuit pour les étudiants ?
+                        <span class="faq-icon"><i class="bi bi-chevron-down"></i></span>
+                    </label>
+                    <div class="faq-content">
+                        <p>Oui, l'accès est entièrement gratuit pour les étudiants sur présentation de leur carte d'étudiant valide de l'année universitaire en cours lors de l'enregistrement.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2" class="faq-toggle">
+                    <label for="faq2" class="faq-header">
+                        Où se déroule l'événement ?
+                        <span class="faq-icon"><i class="bi bi-chevron-down"></i></span>
+                    </label>
+                    <div class="faq-content">
+                        <p>Le AfriConnect Summit 2026 se déroulera physiquement au Centre de Conférence d'excellence Teranga situé sur la corniche Ouest de Dakar, Sénégal.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3" class="faq-toggle">
+                    <label for="faq3" class="faq-header">
+                        Est-il possible de suivre les conférences à distance ?
+                        <span class="faq-icon"><i class="bi bi-chevron-down"></i></span>
+                    </label>
+                    <div class="faq-content">
+                        <p>Absolument ! L'intégralité des keynotes et des panels de l'auditorium principal sera retransmise en direct via YouTube et notre plateforme en ligne.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4" class="faq-toggle">
+                    <label for="faq4" class="faq-header">
+                        Comment puis-je devenir sponsor ou partenaire ?
+                        <span class="faq-icon"><i class="bi bi-chevron-down"></i></span>
+                    </label>
+                    <div class="faq-content">
+                        <p>Veuillez nous adresser un mail officiel via contact@africonnectsummit.com. Notre équipe chargée des partenariats vous recontactera sous 48 heures.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5" class="faq-toggle">
+                    <label for="faq5" class="faq-header">
+                        Y a-t-il des ateliers d'initiation au code pour débutants ?
+                        <span class="faq-icon"><i class="bi bi-chevron-down"></i></span>
+                    </label>
+                    <div class="faq-content">
+                        <p>Oui, plusieurs sessions parallèles et labs interactifs sont programmés spécifiquement pour l'initiation aux technologies web de base (HTML5, CSS3, JS Vanilla).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>AfriConnect Summit 2026</h3>
+                <p>Le carrefour de l'innovation et du développement technologique sur le continent africain.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Accès Rapide</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> AfriConnect Summit. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Retour en haut de page">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
