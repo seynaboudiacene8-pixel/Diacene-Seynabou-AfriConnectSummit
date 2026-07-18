@@ -168,3 +168,324 @@ img {
     display: none; /* Masqué sur desktop */
 }
 
+/* ==========================================================================
+   SECTION HERO & COMTE À REBOURS
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 1.5rem 2rem 1.5rem;
+    background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, rgba(0,78,100,0.05) 100%);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Compte à rebours Flexbox (Contrainte Flexbox 2) */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    min-width: 90px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.countdown-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   SECTION CHIFFRES CLÉS (Contrainte CSS Grid 1)
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.stats-section {
+    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    color: var(--text-color);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   POURQUOI PARTICIPER (Contrainte Flexbox 3)
+   ========================================================================== */
+.why-section {
+    padding: 5rem 1.5rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.why-flex {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.why-card {
+    flex: 1;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed);
+}
+
+.why-card:hover {
+    border-color: var(--primary-color);
+}
+
+.why-icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,107,53,0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.why-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.why-card p {
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   INTERVENANTS (PAGE ACCUEIL & PAGE COMMUNE)
+   ========================================================================== */
+.featured-speakers {
+    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.speaker-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.speaker-img-container {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: var(--border-color);
+}
+
+.speaker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.speaker-card:hover .speaker-img {
+    transform: scale(1.05);
+}
+
+.speaker-title {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.speaker-country {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.center-btn {
+    text-align: center;
+}
+
+/* ==========================================================================
+   PARTENAIRES SPONSORS
+   ========================================================================== */
+.sponsors-section {
+    padding: 5rem 1.5rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.sponsor-tier {
+    max-width: 1000px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+}
+
+.sponsor-tier h3 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-logo {
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: color var(--transition-speed);
+}
+
+/* Différenciation Or, Argent, Bronze */
+.sponsor-gold .sponsor-logo {
+    font-size: 1.5rem;
+    color: #d4af37;
+}
+
+.sponsor-silver .sponsor-logo {
+    font-size: 1.25rem;
+    color: #aaa;
+}
+
+.sponsor-bronze .sponsor-logo {
+    font-size: 1rem;
+    color: #cd7f32;
+}
+
+/* ==========================================================================
+   HERO INTERNE (Programme, Intervenants, Contact)
+   ========================================================================== */
+.internal-hero {
+    height: 250px;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+}
+
+.hero-overlay-content h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255,255,255,0.8);
+}
+
+.breadcrumb i {
+    font-size: 0.75rem;
+    margin: 0 0.5rem;
+}
+
