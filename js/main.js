@@ -198,4 +198,125 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+    // --------------------------------------------------------------------------
+    // 8. VALIDATION FORMULAIRE D'INSCRIPTION (contact.html)
+    // --------------------------------------------------------------------------
+    const regForm = document.getElementById('registrationForm');
+    if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Inputs
+            const nameInput = document.getElementById('fullName');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const ticketInput = document.getElementById('ticketType');
+            const countryInput = document.getElementById('country');
+            const messageInput = document.getElementById('message');
+
+            // Regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]{8,}$/;
+
+            // Validation Nom complet
+            if (nameInput.value.trim() === '') {
+                showError('errorName', nameInput, 'Le nom complet est obligatoire.');
+                isValid = false;
+            } else {
+                clearError('errorName', nameInput);
+            }
+
+            // Validation Email
+            if (!emailRegex.test(emailInput.value.trim())) {
+                showError('errorEmail', emailInput, 'Veuillez saisir un email valide.');
+                isValid = false;
+            } else {
+                clearError('errorEmail', emailInput);
+            }
+
+            // Validation Téléphone
+            if (!phoneRegex.test(phoneInput.value.trim())) {
+                showError('errorPhone', phoneInput, 'Le téléphone doit contenir au moins 8 chiffres.');
+                isValid = false;
+            } else {
+                clearError('errorPhone', phoneInput);
+            }
+
+            // Validation Type Ticket
+            if (ticketInput.value === '') {
+                showError('errorTicket', ticketInput, 'Veuillez choisir un type de participation.');
+                isValid = false;
+            } else {
+                clearError('errorTicket', ticketInput);
+            }
+
+            // Validation Pays
+            if (countryInput.value === '') {
+                showError('errorCountry', countryInput, 'Veuillez choisir un pays.');
+                isValid = false;
+            } else {
+                clearError('errorCountry', countryInput);
+            }
+
+            // Validation Message / Motivation (min 20 caractères)
+            if (messageInput.value.trim().length < 20) {
+                showError('errorMessage', messageInput, 'Le message doit contenir au moins 20 caractères.');
+                isValid = false;
+            } else {
+                clearError('errorMessage', messageInput);
+            }
+
+            // Si tout est ok, simulation de succès
+            if (isValid) {
+                const successAlert = document.getElementById('successAlert');
+                successAlert.style.display = 'block';
+                regForm.reset();
+                
+                // Masquer le message de succès au bout de 5 secondes
+                setTimeout(() => {
+                    successAlert.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Fonctions d'affichage des erreurs
+        function showError(spanId, inputElement, message) {
+            const errorSpan = document.getElementById(spanId);
+            errorSpan.innerText = message;
+            inputElement.style.borderColor = '#dc3545'; // Rouge d'erreur
+        }
+
+        function clearError(spanId, inputElement) {
+            const errorSpan = document.getElementById(spanId);
+            errorSpan.innerText = '';
+            inputElement.style.borderColor = '#28a745'; // Vert de succès
+        }
+    }
+
+    // --------------------------------------------------------------------------
+    // 9. ANNÉE DYNAMIQUE DANS LE FOOTER & RETOUR EN HAUT DYNAMIQUE
+    // --------------------------------------------------------------------------
+    // Injection année en cours
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.innerText = new Date().getFullYear();
+    }
+
+    // Bouton de retour en haut
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
